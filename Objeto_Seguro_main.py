@@ -75,16 +75,17 @@ class ObjetoSeguro:
         self.id = int(self.id)
         self.id = self.id + 1
         nombrearchivo = "RegistoMsj_<"+self.nombre+">.json"
-        self.registro.update({
-            "ID:<"+str(self.id)+">": msj})
-        print(self.registro)
+        self.registro[self.id]={
+            'ID': self.id,
+            'MSJ': msj}
         with open(nombrearchivo, 'w') as f:
             json.dump(self.registro, f, indent=4)
-        self.id = str(self.id)
-        print("ID:<"+self.id+">")
-        return "{ID:<"+self.id+">}"
+        return self.id
 
-    # def consultar_msj(self,id):
+    def consultar_msj(self, id):
+        print(self.registro[id])
+        return self.registro[id]
+
     def esperar_respuesta(self,msj):
         descifrado = self.descifrar_msj(msj) # Descifra con la privada y el msj en tipo llave
         decodificado = self.decodificar64(descifrado) # Decodifica con el mensaje en bytes

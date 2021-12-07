@@ -2,10 +2,10 @@ import Objeto_Seguro_main as f1
 
 ana = f1.ObjetoSeguro('Ana') # Creamos objeto Ana
 david = f1.ObjetoSeguro('David') # Creamos objeto David
-t1 = "Hola, soy Ana. "
-t2 = "Hola, soy David. "
-t3 = "Vamos a establecer una conversacion segura. "
-t4 = "Establezcamosla. "
+t1 = "Hola, soy Ana."
+t2 = "Hola, soy David."
+t3 = "Vamos a establecer una conversacion segura."
+t4 = "Establezcamosla."
 
 ana.gen_llaves() # Generamos llaves de Ana
 david.gen_llaves() # Generamos llaves de David
@@ -21,3 +21,7 @@ respuesta2 = ana.responder(t3)
 david.esperar_respuesta(respuesta2)
 respuesta3 = david.responder(t4)
 ana.esperar_respuesta(respuesta3)
+ana.consultar_msj(1)
+ana.consultar_msj(2)
+david.consultar_msj(1)
+david.consultar_msj(2)

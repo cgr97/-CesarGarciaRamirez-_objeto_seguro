@@ -75,14 +75,14 @@ class ObjetoSeguro:
         self.id = int(self.id)
         self.id = self.id + 1
         nombrearchivo = "RegistoMsj_<"+self.nombre+">.json"
-        self.registro[self.id]={
+        idstr = str(self.id)
+        self.registro["{ID:<"+idstr+">}"]={
             'ID': self.id,
-            'REGISTRO': self.nombre,
+            'REGISTRA': self.nombre,
             'MSJ': msj,
             'Fuente': self.otronombre}
         with open(nombrearchivo, 'w') as f:
             json.dump(self.registro, f, indent=4)
-        idstr = str(self.id)
         print("{ID:<"+idstr+">}")
         return "{ID:<"+idstr+">}"
 

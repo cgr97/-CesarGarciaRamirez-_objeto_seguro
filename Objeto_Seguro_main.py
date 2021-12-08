@@ -97,24 +97,3 @@ class ObjetoSeguro:
         # print(self.nombre+": recibí "+decodificado)
         self.almacenar_msj(decodificado)
 
-
-# print('Creamos objeto')
-# nombre = 'Cesar'
-# obj = ObjetoSeguro(nombre)
-# print('Generamos llaves')
-# obj.gen_llaves()
-# print('Obtenemos llave publica')
-# publica = obj.llave_publica()
-# TextoPlano = "********** Este es un mensaje de prueba que no debe leerse **********"
-# print('Codificamos:',TextoPlano)
-# codificado = obj.codificar64(TextoPlano)
-# print('Ciframos')
-# cifrado = obj.cifrar_msj(publica, codificado)
-# print('Saludamos')
-# obj.saludar(nombre,cifrado)
-# print('Desciframos')
-# descifrado = obj.descifrar_msj(cifrado)
-# print('Decodificamos')
-# decodificado = obj.decodificar64(descifrado)
-
-

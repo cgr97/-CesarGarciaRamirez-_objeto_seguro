@@ -28,7 +28,7 @@ class ObjetoSeguro:
     def saludar(self,name,msj):
         codificado = self.codificar64(msj) # Recibe en texto plano y saca el msj en bytes
         cifrado = self.cifrar_msj(self.otrallave,codificado) # Recibe en bytes y saca el msj en formato llave
-        print(f'{name}{": "}{cifrado}')
+        print(f'{name}{" saluda: "}{cifrado}')
         return cifrado # Devuelve un mensaje tipo llave
 
     def responder(self,msj):
@@ -77,14 +77,19 @@ class ObjetoSeguro:
         nombrearchivo = "RegistoMsj_<"+self.nombre+">.json"
         self.registro[self.id]={
             'ID': self.id,
-            'MSJ': msj}
+            'REGISTRO': self.nombre,
+            'MSJ': msj,
+            'Fuente': self.otronombre}
         with open(nombrearchivo, 'w') as f:
             json.dump(self.registro, f, indent=4)
         return self.id
 
     def consultar_msj(self, id):
-        print(self.registro[id])
-        return self.registro[id]
+        nombrearchivo = "RegistoMsj_<" + self.nombre + ">.json"
+        with open(nombrearchivo, 'r') as consulta:
+            objeto_json = json.load(consulta)
+            print(objeto_json[str(id)])
+        return objeto_json[str(id)]
 
     def esperar_respuesta(self,msj):
         descifrado = self.descifrar_msj(msj) # Descifra con la privada y el msj en tipo llave

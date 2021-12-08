@@ -82,7 +82,9 @@ class ObjetoSeguro:
             'Fuente': self.otronombre}
         with open(nombrearchivo, 'w') as f:
             json.dump(self.registro, f, indent=4)
-        return self.id
+        idstr = str(self.id)
+        print("{ID:<"+idstr+">}")
+        return "{ID:<"+idstr+">}"
 
     def consultar_msj(self, id):
         nombrearchivo = "RegistoMsj_<" + self.nombre + ">.json"

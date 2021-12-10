@@ -1,27 +1,26 @@
-import Objeto_Seguro_main as f1
+import Objeto_Seguro as Fuente
 
-ana = f1.ObjetoSeguro('Ana') # Creamos objeto Ana
-david = f1.ObjetoSeguro('David') # Creamos objeto David
+obj1 = Fuente.ObjetoSeguro('Ana') # Creamos objeto Ana
+obj2 = Fuente.ObjetoSeguro('David') # Creamos objeto David
 t1 = "Hola, soy Ana."
 t2 = "Hola, soy David."
-t3 = "¿Esta conversacion está cifrada?"
-t4 = "Lo está."
+t3 = "Vamos por chelas."
+t4 = "Jalo."
 
-ana.gen_llaves() # Generamos llaves de Ana
-david.gen_llaves() # Generamos llaves de David
-llave_ana = ana.llave_publica()  # Obtenemos la llave de Ana
-llave_david = david.llave_publica() # Obtenemos la llave de David
-ana.intercambio(llave_david)
-david.intercambio(llave_ana)
-saludo = ana.saludar('Ana',t1)
-david.esperar_respuesta(saludo)
-respuesta = david.responder(t2)
-ana.esperar_respuesta(respuesta)
-respuesta2 = ana.responder(t3)
-david.esperar_respuesta(respuesta2)
-respuesta3 = david.responder(t4)
-ana.esperar_respuesta(respuesta3)
-david.consultar_msj('{ID:<1>}')
-ana.consultar_msj('{ID:<1>}')
-david.consultar_msj('{ID:<2>}')
-ana.consultar_msj('{ID:<2>}')
+obj1.gen_llaves()  # Generamos llaves de Ana
+obj2.gen_llaves()  # Generamos llaves de David
+obj1.intercambio(obj2.nombre, obj2.llave_publica())  # Intercambiamos llaves
+obj2.intercambio(obj1.nombre, obj1.llave_publica())  # Intercamiamos llaves
+saludo = obj1.saludar(obj1.nombre, t1)  # Objeto1 saluda
+obj2.esperar_respuesta(saludo)
+respuesta = obj2.responder(t2)
+obj1.esperar_respuesta(respuesta)
+respuesta2 = obj1.responder(t3)
+obj2.esperar_respuesta(respuesta2)
+respuesta3 = obj2.responder(t4)
+obj1.esperar_respuesta(respuesta3)
+obj2.consultar_msj('{ID:<1>}')
+obj1.consultar_msj('{ID:<1>}')
+obj2.consultar_msj('{ID:<2>}')
+obj1.consultar_msj('{ID:<2>}')
+

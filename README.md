@@ -27,4 +27,5 @@ obj1.consultar_msj('{ID:<1>}')  # Ana busca en su registro
 obj2.consultar_msj('{ID:<2>}')
 obj1.consultar_msj('{ID:<2>}')
 
-Este programa, primero, instancia dos objetos de la clase ObjetoSeguro, y creando 4 mensajes predeterminados. Después, los objetos generan sus llaves publicas y privadas y las intercambian junto con su nombre para que el otro pueda conocer su llave publica y pueda cifrar mensajes con ella. Así, uno de los objetos saluda, en ese proceso se codifica y cifra un mensaje. El otro objeto recibe espera a la respuesta y descifra y decodifica el mensaje. Ahora el objeto 2 responde con mensaje cifrado y asi intercambian 4 mensajes. Posteriormente, los objetos consultan sus registros de mensajes descifrados. #numissue #2
+Este programa, primero, instancia dos objetos de la clase ObjetoSeguro, y creando 4 mensajes predeterminados. Después, los objetos generan sus llaves publicas y privadas y las intercambian junto con su nombre para que el otro pueda conocer su llave publica y pueda cifrar mensajes con ella. Así, uno de los objetos saluda, en ese proceso se codifica y cifra un mensaje. El otro objeto recibe espera a la respuesta y descifra y decodifica el mensaje. Ahora el objeto 2 responde con mensaje cifrado y asi intercambian 4 mensajes. Posteriormente, los objetos consultan sus registros de mensajes descifrados. 
+

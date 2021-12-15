@@ -6,7 +6,7 @@ import Objeto_Seguro
 class Socket:
     def __init__(self):
         self.node = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.port_and_ip = ('127.0.0.1', 12363)
+        self.port_and_ip = ('127.0.0.1', 12362)
 
     def iniciar_cliente(self,eleccion):
         self.node.connect(self.port_and_ip)
